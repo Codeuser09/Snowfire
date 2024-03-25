@@ -53,6 +53,8 @@
   boot.loader.grub.enable = if (systemSettings.bootMode == "uefi") then false else true;
   boot.loader.grub.device = systemSettings.grubDevice; # does nothing if running uefi rather than bios
 
+  services.logind.lidSwitch = "ignore" ;
+
   # Networking
   networking.hostName = systemSettings.hostname; # Define your hostname.
   networking.networkmanager.enable = true; # Use networkmanager
