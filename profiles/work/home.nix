@@ -28,7 +28,6 @@
               #../../user/lang/godot/godot.nix # Game development
               #../../user/pkgs/blockbench.nix # Blockbench ## marked as insecure
               ../../user/hardware/bluetooth.nix # Bluetooth
-              ../../user/app/virtualization/virtualization.nix # Virtual machines
               #../../user/app/neovim/nvim.nix
             ];
 

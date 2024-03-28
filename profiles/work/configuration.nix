@@ -25,6 +25,7 @@
       ../../system/security/automount.nix
       ../../system/style/stylix.nix
       ../../system/hardware/nvidia.nix
+      ../../system/app/virtualization.nix
     ];
   # Fix nix path
   nix.nixPath = [ "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
