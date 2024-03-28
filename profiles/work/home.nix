@@ -28,7 +28,7 @@
               #../../user/lang/godot/godot.nix # Game development
               #../../user/pkgs/blockbench.nix # Blockbench ## marked as insecure
               ../../user/hardware/bluetooth.nix # Bluetooth
-              #../../system/app/virtualization.nix # Virtual machines
+              ../../user/app/virtualization/virtualization.nix # Virtual machines
               #../../user/app/neovim/nvim.nix
             ];
 
@@ -91,7 +91,7 @@
 
     # Media
     thunderbird
-    #gimp
+    gimp
     #pinta
     krita
     inkscape
@@ -127,6 +127,8 @@
     #})
     obs-studio
     ffmpeg
+    nodePackages.typescript-language-server
+    typescript
     (pkgs.writeScriptBin "kdenlive-accel" ''
       #!/bin/sh
       DRI_PRIME=0 kdenlive "$1"
@@ -135,7 +137,7 @@
     #mediainfo
     #libmediainfo
     #mediainfo-gui
-    #audio-recorder
+    audacity
 
     # Various dev packages
     gh
@@ -170,9 +172,6 @@
   };
   xdg.mime.enable = true;
   xdg.mimeApps.enable = true;
-  xdg.mimeApps.associations.added = {
-    "application/octet-stream" = "flstudio.desktop;";
-  };
 
   home.sessionVariables = {
     EDITOR = userSettings.editor;

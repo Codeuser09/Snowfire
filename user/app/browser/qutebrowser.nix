@@ -72,7 +72,8 @@ c.url.searchengines = {'DEFAULT': 'https://startpage.com/do/search?query={}',
                        'gh'     : 'https://github.com/search?q={}&type=repositories',
                        'gl'     : 'https://gitlab.com/search?search={}&nav_source=navbar',
                        'wk'     : 'https://en.wikipedia.org/w/index.php?fulltext=1&search={}&title=Special%3ASearch&ns0=1',
-                       'np'     : 'https://search.nixos.org/packages?channel=23.11&from=0&size=50&sort=relevance&type=packages&query={}'
+                       'np'     : 'https://search.nixos.org/packages?channel=23.11&from=0&size=50&sort=relevance&type=packages&query={}',
+                       'gp'     : 'https://chat.openai.com/?q={}'
                       }
 
 config.set('completion.open_categories',["searchengines","quickmarks","bookmarks"])

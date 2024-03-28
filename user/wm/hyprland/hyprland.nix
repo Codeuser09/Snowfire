@@ -38,7 +38,8 @@
       exec-once = waybar
       exec-once = emacs --daemon
 
-      exec-once = swayidle -w timeout 90 '${config.programs.swaylock.package}/bin/swaylock -f' #timeout 210 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep "${config.programs.swaylock.package}/bin/swaylock -f"
+      exec-once = swayidle -w timeout 90 '${config.programs.swaylock.package}/bin/swaylock -f'
+      #timeout 210 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep "${config.programs.swaylock.package}/bin/swaylock -f"
       exec-once = obs-notification-mute-daemon
 
       exec = ~/.swaybg-stylix
@@ -134,7 +135,6 @@
        bind=,code:255,exec,airplane-mode
        bind=SUPER,C,exec,wl-copy $(hyprpicker)
 
-       bind=SUPERCTRL,S,exec,swaylock --grace 0 & sleep 1 && systemctl suspend
        bind=SUPERCTRL,L,exec,swaylock --grace 0
 
        bind=SUPER,H,movefocus,l
@@ -245,7 +245,11 @@
          repeat_rate = 50
          accel_profile = adaptive
          follow_mouse = 2
-       }
+        }
+
+        gestures {
+            workspace_swipe = true
+        }
 
        misc {
          mouse_move_enables_dpms = false

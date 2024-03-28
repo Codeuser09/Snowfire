@@ -10,6 +10,7 @@
       pandas
       numpy
       python-lsp-server
+      xlrd
     ]))
   ]);
 }
