@@ -44,7 +44,9 @@
     rofi
     git
     obsidian
+    firefox
     lshw
+    lutris
 #    neovim
 #    syncthing
 
@@ -55,6 +57,7 @@
     glib
     #newsflash
     gnome.nautilus
+    ollama
     #gnome.gnome-calendar
     #gnome.seahorse
     #gnome.gnome-maps

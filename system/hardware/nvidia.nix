@@ -43,10 +43,12 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.beta;
 
+
     prime = {
       sync.enable = true;
       nvidiaBusId = lib.mkDefault "PCI:1:0:0";
       intelBusId = lib.mkDefault "PCI:0:2:0";
     };
   };
+  boot.kernelParams = [ "module_blacklist=nouveau" ];
 }

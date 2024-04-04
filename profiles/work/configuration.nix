@@ -26,7 +26,7 @@
       ../../system/style/stylix.nix
       ../../system/hardware/nvidia.nix
       ../../system/app/virtualization.nix
-      ../../system/app/polkit.nix
+      ../../system/app/steam.nix
     ];
   # Fix nix path
   nix.nixPath = [ "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"

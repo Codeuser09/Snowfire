@@ -240,7 +240,7 @@
 
        input {
          kb_layout = de
-         kb_options = caps:escape
+         #kb_options = caps:escape
          repeat_delay = 350
          repeat_rate = 50
          accel_profile = adaptive
