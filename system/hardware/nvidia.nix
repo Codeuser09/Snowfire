@@ -50,5 +50,7 @@
       intelBusId = lib.mkDefault "PCI:0:2:0";
     };
   };
+
+  #Blacklisting Nouveau seems to be nessessary to get nvidia drivers working
   boot.kernelParams = [ "module_blacklist=nouveau" ];
 }
