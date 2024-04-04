@@ -47,6 +47,8 @@
     firefox
     lshw
     lutris
+    wine
+    proton-ge-bin
 #    neovim
 #    syncthing
 
@@ -65,7 +67,6 @@
     #protonmail-bridge
     #texliveSmall
 
-    #wine
     #bottles
     # The following requires 64-bit FL Studio (FL64) to be installed to a bottle
     # With a bottle name of "FL Studio"
