@@ -28,6 +28,7 @@
               #../../user/lang/godot/godot.nix # Game development
               #../../user/pkgs/blockbench.nix # Blockbench ## marked as insecure
               ../../user/hardware/bluetooth.nix # Bluetooth
+              ../../user/app/gaming.nix
               #../../user/app/neovim/nvim.nix
             ];
 
@@ -46,7 +47,6 @@
     obsidian
     firefox
     bitwarden
-    lutris
 #    neovim
 #    syncthing
 
