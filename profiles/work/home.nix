@@ -48,7 +48,8 @@
     lshw
     lutris
     wine
-    proton-ge-bin
+    protonup-qt
+    bitwarden
 #    neovim
 #    syncthing
 

@@ -11,6 +11,9 @@
       numpy
       python-lsp-server
       xlrd
+      pygame
+      pyautogui
+      keyboard
     ]))
   ]);
 }

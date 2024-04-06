@@ -24,14 +24,14 @@
   services.xserver = {
     enable = true;
     xkb = {
-      layout = "us";
+      layout = "de";
       variant = "";
-      options = "caps:escape";
+      #options = "caps:escape";
     };
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-      enableHidpi = true;
+      #enableHidpi = true;
       theme = "chili";
     };
   };
