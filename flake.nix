@@ -9,7 +9,7 @@
       systemSettings = {
         system = "x86_64-linux"; # system arch
         hostname = "snowfire"; # hostname
-        profile = "work"; # select a profile defined from my profiles directory
+        profile = "gaming"; # select a profile defined from my profiles directory
         timezone = "Europe/Vienna"; # select timezone
         locale = "en_US.UTF-8"; # select locale
         bootMode = "uefi"; # uefi or bios
