@@ -47,7 +47,6 @@
     obsidian
     firefox
     bitwarden
-    reaper
 #    neovim
 #    syncthing
 
