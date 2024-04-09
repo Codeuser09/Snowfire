@@ -28,6 +28,7 @@
       ../../system/app/virtualization.nix
       ../../system/app/steam.nix
       ../../system/app/timeshift.nix
+      ../../system/app/polkit.nix
     ];
   # Fix nix path
   nix.nixPath = [ "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
@@ -109,6 +110,8 @@
       pkgs.xdg-desktop-portal-gtk
     ];
   };
+
+
 
   # It is ok to leave this unchanged for compatibility purposes
   system.stateVersion = "22.11";
