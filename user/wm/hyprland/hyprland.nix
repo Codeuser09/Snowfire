@@ -38,7 +38,7 @@
       exec-once = waybar
       exec-once = emacs --daemon
 
-      exec-once = nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1 &
+#      exec-once = nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1 &
 
       exec-once = swayidle -w timeout 90 '${config.programs.swaylock.package}/bin/swaylock -f'
       #timeout 210 'suspend-unless-render' resume '${pkgs.hyprland}/bin/hyprctl dispatch dpms on' before-sleep "${config.programs.swaylock.package}/bin/swaylock -f"
