@@ -62,6 +62,7 @@
     #gnome.gnome-maps
     openvpn
     discord
+    qalculate-gtk
     #protonmail-bridge
     #texliveSmall
 
