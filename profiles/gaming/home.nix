@@ -61,6 +61,7 @@
     #gnome.seahorse
     #gnome.gnome-maps
     openvpn
+    discord
     #protonmail-bridge
     #texliveSmall
 
