@@ -27,7 +27,6 @@
       ../../system/hardware/nvidia.nix
       ../../system/app/virtualization.nix
       ../../system/app/steam.nix
-      ../../system/app/timeshift.nix
       ../../system/app/polkit.nix
     ];
   # Fix nix path

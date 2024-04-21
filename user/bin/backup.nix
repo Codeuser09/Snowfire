@@ -3,7 +3,7 @@
 
 let
   myBackupScript = ''
-  #!/bin/bash
+  #!/usr/bin/env bash
 
   # A script to perform incremental backups using rsync
 
@@ -12,11 +12,22 @@ let
   set -o pipefail
 
   readonly SOURCE_DIR="$HOME"
-  readonly BACKUP_DIR="/mnt/data/backups"
+  readonly BACKUP_DIR="/mnt/home_backups"
   readonly DATETIME="$(date '+%Y-%m-%d_%H:%M:%S')"
   readonly BACKUP_PATH="$BACKUP_DIR/$DATETIME"
   readonly LATEST_LINK="$BACKUP_DIR/latest"
 
+  lsblk
+  read -p "Is /dev/sda the correct backup drive? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
+
+
+  if grep -qs '/mnt/sda ' /proc/mounts; then
+      sudo umount /dev/sda
+  else
+      echo "Not currently mounted"
+  fi
+
+  sudo mount /dev/sda2 /mnt
   mkdir -p "$BACKUP_DIR"
 
   rsync -av --delete \
@@ -31,6 +42,6 @@ let
 in
 {
   home.packages = [
-    (pkgs.writeScriptsBin "backup" myBackupScript)
+    (pkgs.writeScriptBin "backup" myBackupScript)
   ];
 }

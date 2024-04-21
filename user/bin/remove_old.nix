@@ -2,7 +2,7 @@
 
 let
   myRemoveOldScript = ''
-  #!/usr/bin/env sh
+  #!/usr/bin/env bash
 
   sudo nix-collect-garbage -d
   sudo /run/current-system/bin/switch-to-configuration boot
@@ -10,6 +10,6 @@ let
 in
 {
   home.packages = [
-    (pkgs.writeScriptsBin "remove_old" myRemoveOldScript)
+    (pkgs.writeScriptBin "remove_old" myRemoveOldScript)
   ];
 }
