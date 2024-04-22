@@ -12,32 +12,36 @@ let
   set -o pipefail
 
   readonly SOURCE_DIR="$HOME"
-  readonly BACKUP_DIR="/mnt/home_backups"
+  readonly BACKUP_DIR="mnt/home_backups"
   readonly DATETIME="$(date '+%Y-%m-%d_%H:%M:%S')"
-  readonly BACKUP_PATH="$BACKUP_DIR/$DATETIME"
-  readonly LATEST_LINK="$BACKUP_DIR/latest"
+  readonly BACKUP_PATH="/$BACKUP_DIR/$DATETIME"
+  readonly LATEST_LINK="/$BACKUP_DIR/latest"
 
   lsblk
-  read -p "Is /dev/sda the correct backup drive? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
+  read -p "What partition do you want to backup to? " partition
+  read -p "Is $partition/$BACKUP_DIR the correct backup directory? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
-  if grep -qs '/mnt/sda ' /proc/mounts; then
-      sudo umount /dev/sda
+  if grep -qs '$partition ' /proc/mounts; then
+      sudo umount $partition
   else
       echo "Not currently mounted"
   fi
 
-  sudo mount /dev/sda2 /mnt
-  mkdir -p "$BACKUP_DIR"
+  sudo mount $partition /mnt
+  sudo mkdir -p "/$BACKUP_DIR"
 
-  rsync -av --delete \
+  sudo rsync -av --delete \
     "$SOURCE_DIR/" \
     --link-dest "$LATEST_LINK" \
     --exclude=".cache" \
     "$BACKUP_PATH"
 
-  rm -rf "$LATEST_LINK"
-  ln -s "$BACKUP_PATH" "$LATEST_LINK"
+  sudo rm -rf "$LATEST_LINK"
+  sudo ln -s "$BACKUP_PATH" "$LATEST_LINK"
+
+  sudo umount $partition
+  echo "Please remove the backup partition now"
     '';
 in
 {
