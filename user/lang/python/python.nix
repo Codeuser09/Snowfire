@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
       # Python setup
-      python3Full
+      # python3Full
       jetbrains.pycharm-community
       #imath
       #pystring

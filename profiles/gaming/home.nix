@@ -28,6 +28,7 @@
               ../../user/lang/cc/cc.nix # C and C++ tools
               ../../user/lang/rust/rust.nix #Cargo and shit
               ../../user/lang/python/python-packages.nix #Python shit I need for cargo stuff
+              ../../user/lang/python/python.nix
               #../../user/lang/godot/godot.nix # Game development
               #../../user/pkgs/blockbench.nix # Blockbench ## marked as insecure
               ../../user/hardware/bluetooth.nix # Bluetooth
