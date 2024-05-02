@@ -4,10 +4,11 @@
   home.packages = ([
     (pkgs.makeDesktopItem {
       name = "Ableton";
-      desktopName = "Ableton live 11";
-      exec = "vmplayer /home/simon/vmware/Windows\ 10\ x64/Windows\ 10\ x64.vmx";
+      desktopName = "Ableton";
+      exec = "/home/simon/vmware/start.sh";
       terminal = false;
       type = "Application";
       mimeTypes = ["application/octet-stream"];
+      icon = "/home/simon/vmware/Ableton.png";
     })]);
 }
