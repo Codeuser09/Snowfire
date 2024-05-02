@@ -46,11 +46,12 @@
 
       exec = ~/.swaybg-stylix
 
+
       general {
         layout = master
         cursor_inactive_timeout = 30
         border_size = 4
-        no_cursor_warps = false
+        no_cursor_warps = true
         col.active_border = 0xff'' + config.lib.stylix.colors.base08 + ''
 
         col.inactive_border = 0x33'' + config.lib.stylix.colors.base00 + ''
@@ -247,6 +248,9 @@
          repeat_rate = 50
          accel_profile = adaptive
          follow_mouse = 2
+         touchpad {
+           natural_scroll = false
+         }
         }
 
         gestures {
