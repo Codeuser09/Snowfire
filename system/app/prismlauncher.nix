@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = [ pkgs.prismlauncher pkgs.temurin-jre-bin-20 ];
+  environment.systemPackages = [ pkgs.prismlauncher pkgs.temurin-jre-bin-21 ];
 }
