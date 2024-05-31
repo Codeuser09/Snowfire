@@ -57,8 +57,8 @@
         col.inactive_border = 0x33'' + config.lib.stylix.colors.base00 + ''
 
             resize_on_border = true
-            gaps_in = 10
-            gaps_out = 10
+            gaps_in = 12
+            gaps_out = 14
        }
 
        #plugin {
