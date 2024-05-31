@@ -50,15 +50,15 @@
       general {
         layout = master
         cursor_inactive_timeout = 30
-        border_size = 4
+        border_size = 0
         no_cursor_warps = true
         col.active_border = 0xff'' + config.lib.stylix.colors.base08 + ''
 
         col.inactive_border = 0x33'' + config.lib.stylix.colors.base00 + ''
 
             resize_on_border = true
-            gaps_in = 7
-            gaps_out = 7
+            gaps_in = 10
+            gaps_out = 10
        }
 
        #plugin {
@@ -261,7 +261,7 @@
          mouse_move_enables_dpms = false
        }
        decoration {
-         rounding = 8
+         rounding = 0
          blur {
            enabled = true
            size = 5
@@ -271,6 +271,22 @@
            brightness = 0.8
          }
        }
+      animations {
+        enabled = true
+        # █▄▄ █▀▀ ▀█ █ █▀▀ █▀█   █▀▀ █░█ █▀█ █░█ █▀▀
+        # █▄█ ██▄ █▄ █ ██▄ █▀▄   █▄▄ █▄█ █▀▄ ▀▄▀ ██▄
+        bezier = overshot, 0.05, 0.9, 0.1, 1.05
+        bezier = smoothOut, 0.36, 0, 0.66, -0.56
+        bezier = smoothIn, 0.25, 1, 0.5, 1
+
+        animation = windows, 1, 5, overshot, slide
+        animation = windowsOut, 1, 4, smoothOut, slide
+        animation = windowsMove, 1, 4, default
+        animation = border, 1, 10, default
+        animation = fade, 1, 10, smoothIn
+        animation = fadeDim, 1, 10, smoothIn
+        animation = workspaces, 1, 6, default
+      }
 
     '';
     xwayland = { enable = true; };

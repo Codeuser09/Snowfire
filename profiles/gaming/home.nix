@@ -114,6 +114,7 @@
     SPAWNEDITOR = userSettings.spawnEditor;
     TERM = userSettings.term;
     BROWSER = userSettings.browser;
+    FILEMANAGER = "nautilus";
   };
 
 }
