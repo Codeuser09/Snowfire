@@ -34,6 +34,7 @@
               ../../user/hardware/bluetooth.nix # Bluetooth
               ../../user/app/games/games.nix
               ../../user/app/Ableton/Ableton.nix
+              ../../user/app/Davinci/Davinci.nix
               #../../user/app/neovim/nvim.nix
             ];
 
@@ -73,6 +74,7 @@
     ffmpeg
     nodePackages.typescript-language-server
     typescript
+    gparted
     (pkgs.writeScriptBin "kdenlive-accel" ''
       #!/bin/sh
       DRI_PRIME=0 kdenlive "$1"

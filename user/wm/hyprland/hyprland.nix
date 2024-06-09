@@ -57,8 +57,8 @@
         col.inactive_border = 0x33'' + config.lib.stylix.colors.base00 + ''
 
             resize_on_border = true
-            gaps_in = 12
-            gaps_out = 14
+            gaps_in = 5
+            gaps_out = 5
        }
 
        #plugin {
@@ -226,13 +226,13 @@
        bind=SUPERSHIFT,P,exec,hyprprofile-dmenu
 
        # 3 monitor setup
-       monitor=eDP-1,1920x1080,1000x1080,1
-       monitor=HDMI-A-1,1920x1080,1920x0,1
-       monitor=DP-1,1920x1080,0x0,1
+       # monitor=eDP-1,1920x1080,1000x1080,1
+       # monitor=HDMI-A-1,1920x1080,1920x0,1
+       # monitor=DP-1,1920x1080,0x0,1
 
        # 2 monitor setup
-       #monitor=eDP-1,1920x1080,1920x0,1
-       #monitor=DP-1,1920x1200,0x0,1
+       monitor=eDP-1,1920x1080@60,0x0,1
+       monitor=HDMI-A-1,1920x1080@60,1920x0,1
 
        xwayland {
          force_zero_scaling = true
@@ -240,6 +240,9 @@
 
        # env = WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0
        env = QT_QPA_PLATFORMTHEME,qt5ct
+       env = WLR_NO_HARDWARE_CURSORS,1
+       env = XDG_SESSION_TYPE,wayland
+       env = LIBVA_DRIVER_NAME,nvidia
 
        input {
          kb_layout = de
