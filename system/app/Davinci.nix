@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, env, ... }:
 
 {
-  home.packages = with pkgs; [
+  env.systemPackages = with pkgs; [
     davinci-resolve
     librsvg
     libGLU
