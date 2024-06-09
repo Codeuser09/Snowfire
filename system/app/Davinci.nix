@@ -1,25 +1,26 @@
 {
-  stdenv,
-  lib,
-  unzip,
-  appimage-run,
-  addOpenGLRunpath,
-  libGLU,
-  xorg,
-  buildFHSUserEnv,
-  bash,
-  writeText,
-  ocl-icd,
-  xkeyboard_config,
-  glib,
-  libarchive,
-  python,
-  dbus,
+  env
+, lib
+, unzip
+, appimage-run
+, addOpenGLRunpath
+, libGLU
+, xorg
+, buildFHSUserEnv
+, bash
+, writeText
+, ocl-icd
+, xkeyboard_config
+, glib
+, libarchive
+, python
+, patchelf
+, dbus
 }:
 
 let
   davinci = (
-    stdenv.mkDerivation rec {
+    env.mkDerivation rec {
       pname = "davinci-resolve";
       version = "18.0b3";
 
