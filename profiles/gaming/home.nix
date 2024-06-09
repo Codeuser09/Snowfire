@@ -34,6 +34,7 @@
               ../../user/hardware/bluetooth.nix # Bluetooth
               ../../user/app/games/games.nix
               ../../user/app/Ableton/Ableton.nix
+              ../../user/app/Davinci/Davinci.nix
               #../../user/app/neovim/nvim.nix
             ];
 

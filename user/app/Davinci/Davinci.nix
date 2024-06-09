@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # Module installing brave as default browser
   home.packages = with pkgs; [
     davinci-resolve
     librsvg
