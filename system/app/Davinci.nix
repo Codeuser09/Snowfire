@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  permittedInsecurePackages = [
+    "python-2.7.18.8"
+  ];
   environment.systemPackages = with pkgs; [
     davinci-resolve
     librsvg
