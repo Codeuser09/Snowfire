@@ -1,24 +1,20 @@
-{ stdenv
-, lib
-, cacert
-, curl
-, runCommandLocal
-, targetPlatform
-, unzip
-, appimage-run
-, addOpenGLRunpath
-, libGLU
-, xorg
-, buildFHSUserEnv
-, bash
-, writeText
-, ocl-icd
-, xkeyboard_config
-, glib
-, libarchive
-, python
-, patchelf
-, dbus
+{
+  stdenv,
+  lib,
+  unzip,
+  appimage-run,
+  addOpenGLRunpath,
+  libGLU,
+  xorg,
+  buildFHSUserEnv,
+  bash,
+  writeText,
+  ocl-icd,
+  xkeyboard_config,
+  glib,
+  libarchive,
+  python,
+  dbus,
 }:
 
 let

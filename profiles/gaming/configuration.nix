@@ -29,6 +29,7 @@
       ../../system/app/steam.nix
       ../../system/app/polkit.nix
       ../../system/app/prismlauncher.nix
+      ../../user/app/Davinci.nix
     ];
   # Fix nix path
   nix.nixPath = [ "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
