@@ -29,7 +29,7 @@
       ../../system/app/steam.nix
       ../../system/app/polkit.nix
       ../../system/app/prismlauncher.nix
-      ../../system/app/Davinci.nix
+      # ../../system/app/Davinci.nix Broken 'cause NVIDIA probably
     ];
   # Fix nix path
   nix.nixPath = [ "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
