@@ -11,3 +11,6 @@ Each theme directory stores a few relevant files:
 - =${theme-name}.png= - A screenshot of the theme for previewing purposes
 
 Look at any of the directories here for more info!
+
+You can generate the sha256sum like this:
+cat wallpaper.jpg | openssl dgst -sha384 -binary | openssl base64 -A
