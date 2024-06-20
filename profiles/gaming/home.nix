@@ -34,6 +34,8 @@
               ../../user/hardware/bluetooth.nix # Bluetooth
               ../../user/app/games/games.nix
               ../../user/app/Ableton/Ableton.nix
+              ../../user/app/Music/Reaper.nix
+              ../../user/app/Music/VST_Plugins.nix
               #../../user/app/neovim/nvim.nix
             ];
 
@@ -74,7 +76,6 @@
     nodePackages.typescript-language-server
     typescript
     gparted
-    reaper
     (pkgs.writeScriptBin "kdenlive-accel" ''
       #!/bin/sh
       DRI_PRIME=0 kdenlive "$1"
