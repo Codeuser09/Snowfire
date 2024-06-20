@@ -34,8 +34,6 @@
               ../../user/hardware/bluetooth.nix # Bluetooth
               ../../user/app/games/games.nix
               ../../user/app/Ableton/Ableton.nix
-              ../../user/app/Music/Reaper.nix
-              ../../user/app/Music/VST_Plugins.nix
               #../../user/app/neovim/nvim.nix
             ];
 
