@@ -74,6 +74,7 @@
     nodePackages.typescript-language-server
     typescript
     gparted
+    reaper
     (pkgs.writeScriptBin "kdenlive-accel" ''
       #!/bin/sh
       DRI_PRIME=0 kdenlive "$1"
