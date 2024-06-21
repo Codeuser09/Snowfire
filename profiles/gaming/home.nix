@@ -75,8 +75,6 @@
     typescript
     gparted
     baobab
-    vscode
-    vscode-extensions.vadimcn.vscode-lldb
     (pkgs.writeScriptBin "kdenlive-accel" ''
       #!/bin/sh
       DRI_PRIME=0 kdenlive "$1"
