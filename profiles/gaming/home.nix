@@ -75,6 +75,7 @@
     typescript
     gparted
     baobab
+    vscode
     (pkgs.writeScriptBin "kdenlive-accel" ''
       #!/bin/sh
       DRI_PRIME=0 kdenlive "$1"
