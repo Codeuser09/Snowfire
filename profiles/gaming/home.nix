@@ -76,7 +76,7 @@
     gparted
     baobab
     vscode
-    vadimcn.vscode-lldb
+    vscode-extensions.vadimcn.vscode-lldb
     (pkgs.writeScriptBin "kdenlive-accel" ''
       #!/bin/sh
       DRI_PRIME=0 kdenlive "$1"
