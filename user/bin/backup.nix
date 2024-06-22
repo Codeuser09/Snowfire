@@ -20,13 +20,9 @@ let
   lsblk
 
   read -p "What partition do you want to backup to? " partition
-  read -p "Is $partition$BACKUP_PATH the correct backup directory? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
+  read -p "Is $partition$BACKUP_PATH the correct backup directory and is the drive not currently in use? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
-  if grep -qs '$partition' /proc/mounts; then
-      sudo umount $partition
-  else
-      echo "Not currently mounted"
-  fi
+  sudo umount -a
 
   sudo mount $partition /mnt
   sudo mkdir -p "/$BACKUP_DIR"
