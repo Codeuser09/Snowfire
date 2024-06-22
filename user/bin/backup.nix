@@ -48,5 +48,6 @@ in
   home.packages = [
     (pkgs.writeScriptBin "backup" myBackupScript)
     pkgs.ntfs3g
+    pkgs.fuse
   ];
 }
