@@ -2,7 +2,7 @@
 
 {
   # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
 
@@ -42,6 +42,7 @@
   home.packages = (with pkgs; [
     # Core
     zsh
+    cheese
     alacritty
     #librewolf
     #brave
