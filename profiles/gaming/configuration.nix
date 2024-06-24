@@ -96,6 +96,7 @@
     git
     cryptsetup
     home-manager
+    python311Packages.keyboard
   ];
 
   # I use zsh btw
