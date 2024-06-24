@@ -42,7 +42,6 @@
   home.packages = (with pkgs; [
     # Core
     zsh
-    cheese
     alacritty
     #librewolf
     #brave
@@ -56,6 +55,7 @@
     mate.atril
     xournalpp
     glib
+    gnome.cheese
     gnome.nautilus
     openvpn
     discord
