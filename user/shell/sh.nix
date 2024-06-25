@@ -13,6 +13,7 @@ let
     gitfetch = "onefetch";
     nixos-rebuild = "systemd-run --no-ask-password --uid=0 --system --scope -p MemoryLimit=16000M -p CPUQuota=60% nixos-rebuild";
     home-manager = "systemd-run --no-ask-password --uid=1000 --user --scope -p MemoryLimit=16000M -p CPUQuota=60% home-manager";
+    clear = "clear && disfetch"
   };
 in
 {
@@ -26,7 +27,7 @@ in
     PROMPT=" ◉ %U%F{magenta}%n%f%u@%U%F{blue}%m%f%u:%F{yellow}%~%f
      %F{green}→%f "
     RPROMPT="%F{red}▂%f%F{yellow}▄%f%F{green}▆%f%F{cyan}█%f%F{blue}▆%f%F{magenta}▄%f%F{white}▂%f"
-    [ $TERM = "dumb" ] && unsetopt zle && PS1='$ '
+    [ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && disfetch
     '';
   };
 
