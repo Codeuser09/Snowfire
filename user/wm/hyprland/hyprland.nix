@@ -98,7 +98,7 @@ in
 
        bind=SUPER,code:9,exec,nwggrid-wrapper
        bind=SUPER,code:66,exec,nwggrid-wrapper
-       bind=SUPER,SPACE,fullscreen,1
+       # bind=SUPER,SPACE,fullscreen,1
        bind=SUPERSHIFT,F,fullscreen,0
        bind=SUPER,Y,workspaceopt,allfloat
        bind=ALT,TAB,cyclenext
@@ -133,7 +133,7 @@ in
 
        bind=SUPERCTRL,P,pin
 
-       bind=SUPER,code:47,exec,fuzzel
+       bind=SUPER,SPACE,exec,fuzzel
        bind=SUPER,X,exec,fnottctl dismiss
        bind=SUPERSHIFT,X,exec,fnottctl dismiss all
        bind=SUPER,Q,killactive
@@ -215,7 +215,7 @@ in
        bind=SUPER,B,togglespecialworkspace,scratch_btm
        bind=SUPER,D,exec,if hyprctl clients | grep Element; then echo "scratch_ranger respawn not needed"; else element-desktop; fi
        bind=SUPER,D,togglespecialworkspace,scratch_element
-       bind=SUPER,code:172,exec,togglespecialworkspace,scratch_pavucontrol
+       bind=SUPER,P,exec,togglespecialworkspace,scratch_pavucontrol
        bind=SUPER,code:172,exec,if hyprctl clients | grep pavucontrol; then echo "scratch_ranger respawn not needed"; else pavucontrol; fi
 
        $scratchpadsize = size 80% 85%

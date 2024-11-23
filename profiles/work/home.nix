@@ -180,6 +180,7 @@
     audio-recorder
     gnome.cheese
     ardour
+    bitwig-studio
     rosegarden
     tenacity
 
