@@ -17,6 +17,7 @@ vim.keymap.set("n", "<C-->", function()
 end)
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
+vim.o.enablerelative = true
 map({"n", "t", "v", "i"}, "<A-x>", ":", { desc = "CMD enter command mode" })
 map({"n", "t", "v", "i"}, "<C-n>", "<Down>", { desc = "up" })
 map({"n", "t", "v", "i"}, "<C-p>", "<Up>", { desc = "down" })

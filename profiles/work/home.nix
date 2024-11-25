@@ -18,12 +18,14 @@
               ../../user/app/ranger/ranger.nix # My ranger file manager config
               ../../user/app/git/git.nix # My git config
               ../../user/app/keepass/keepass.nix # My password manager
+              ../../user/app/kanata/kanata.nix
               (./. + "../../../user/app/browser"+("/"+userSettings.browser)+".nix") # My default browser selected from flake
               ../../user/app/virtualization/virtualization.nix # Virtual machines
               #../../user/app/flatpak/flatpak.nix # Flatpaks
               ../../user/style/stylix.nix # Styling and themes for my apps
               ../../user/lang/cc/cc.nix # C and C++ tools
               ../../user/lang/godot/godot.nix # Game development
+              ../../user/lang/python/python.nix
               #../../user/pkgs/blockbench.nix # Blockbench ## marked as insecure
               ../../user/hardware/bluetooth.nix # Bluetooth
             ];
@@ -38,6 +40,7 @@
     qutebrowser
     git
     syncthing
+    obsidian
 
     # Office
     nextcloud-client
@@ -59,10 +62,11 @@
     texliveSmall
     numbat
     element-desktop-wayland
-
+    anki
+    bitwarden
     openai-whisper-cpp
 
-    wine
+    wine64
     bottles
     # The following requires 64-bit FL Studio (FL64) to be installed to a bottle
     # With a bottle name of "FL Studio"
@@ -179,8 +183,12 @@
     libmediainfo
     audio-recorder
     gnome.cheese
+
     ardour
     bitwig-studio
+    yabridge
+    yabridgectl
+
     rosegarden
     tenacity
 
@@ -192,6 +200,8 @@
     nodePackages.ungit
     ventoy
     kdenlive
+    nodejs_22
+    ollama
   ]);
 
   home.file.".local/share/pixmaps/nixos-snowflake-stylix.svg".source =
