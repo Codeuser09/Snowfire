@@ -30,7 +30,7 @@
   k (tap-hold $tap-time $hold-time k rsft)
   l (tap-hold $tap-time $hold-time l ralt)
   ; (tap-hold $tap-time $hold-time ; rmet)
-  sym (tap-hold $tap-time $hold-time lalt (layer-toggle symbols))
+  sym (tap-hold $tap-time $hold-time g (layer-toggle symbols))
 )
 
 (deflayer base
