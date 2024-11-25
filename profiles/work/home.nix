@@ -201,7 +201,6 @@
     ventoy
     kdenlive
     nodejs_22
-    ollama
   ]);
 
   home.file.".local/share/pixmaps/nixos-snowflake-stylix.svg".source =
@@ -214,6 +213,10 @@
   services.nextcloud-client = {
     enable = true;
     startInBackground = true;
+  };
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
   };
 
   xdg.enable = true;
