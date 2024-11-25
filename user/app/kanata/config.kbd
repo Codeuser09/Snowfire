@@ -13,15 +13,16 @@
 )
 
 (defalias
+  u u
+  o o
+  u2 (unicode ü)
+  o2 (unicode ö)
+
   escctrl (tap-hold 100 100 esc lctl)
   a (tap-hold $tap-time $hold-time a lmet)
   a2 (tap-hold $tap-time $hold-time (unicode ä) lmet)
-  u (tap-hold $tap-time $hold-time u u)
-  u2 (tap-hold $tap-time $hold-time (unicode ü) lmet)
-  s (tap-hold $tap-time $hold-time s s)
-  s2 (tap-hold $tap-time $hold-time (unicode ß) (unicode ß))
-  o (tap-hold $tap-time $hold-time o o)
-  o2 (tap-hold $tap-time $hold-time (unicode ö) (unicode ö))
+  s (tap-hold $tap-time $hold-time s lalt)
+  s2 (tap-hold $tap-time $hold-time (unicode ß) lalt)
 
   d (tap-hold $tap-time $hold-time d lsft)
   f (tap-hold $tap-time $hold-time f lctl)
