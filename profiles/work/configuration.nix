@@ -25,7 +25,6 @@
       ../../system/security/openvpn.nix
       ../../system/security/automount.nix
       ../../system/style/stylix.nix
-      ../../user/app/kanata/kanata.nix
     ];
 
   # Fix nix path
