@@ -1,7 +1,7 @@
 { config, pkgs, inputs, services, ... }:
 
 {
-  services.kanata = {
+  config.services.kanata = {
     enable = true;
     keyboards.default.config = ''
       ;; defsrc is still necessary
