@@ -100,7 +100,7 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "networkmanager" "wheel" "input" "dialout" "video" "render" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "uinput" "dialout" "video" "render" ];
     packages = [];
     uid = 1000;
   };

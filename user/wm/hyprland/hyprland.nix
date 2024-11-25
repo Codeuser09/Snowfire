@@ -60,6 +60,8 @@ in
 
       exec-once = hyprpaper
 
+      exec-once = kanta -c ~/.config/kanata/config.kbd
+
       bezier = wind, 0.05, 0.9, 0.1, 1.05
       bezier = winIn, 0.1, 1.1, 0.1, 1.0
       bezier = winOut, 0.3, -0.3, 0, 1
