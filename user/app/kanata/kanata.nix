@@ -5,10 +5,6 @@
     enable = true;
     keyboards.default.config = ''
       ;; defsrc is still necessary
-      (defcfg
-        process-unmapped-keys yes
-      )
-
       (defsrc
         caps a s d f j k l u ; g o
       )
