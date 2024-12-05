@@ -26,6 +26,7 @@
               ../../user/lang/cc/cc.nix # C and C++ tools
               ../../user/lang/godot/godot.nix # Game development
               ../../user/lang/python/python.nix
+              ../../user/lang/rust/rust.nix
               #../../user/pkgs/blockbench.nix # Blockbench ## marked as insecure
               ../../user/hardware/bluetooth.nix # Bluetooth
               ../../user/app/kanata/kanata.nix
@@ -201,7 +202,6 @@
     nodePackages.ungit
     ventoy
     kdenlive
-    nodejs_22
   ]);
 
   home.file.".local/share/pixmaps/nixos-snowflake-stylix.svg".source =
