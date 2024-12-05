@@ -16,7 +16,6 @@ M.base46 = {
 
 M.ui = {
  theme = "stylix",
- transparency = true,
  nvdash = {
    load_on_startup = true,
    buttons = {
