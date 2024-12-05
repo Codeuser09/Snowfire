@@ -28,6 +28,7 @@
               ../../user/lang/python/python.nix
               #../../user/pkgs/blockbench.nix # Blockbench ## marked as insecure
               ../../user/hardware/bluetooth.nix # Bluetooth
+              ../../user/app/kanata/kanata.nix
             ];
 
   home.stateVersion = "22.11"; # Please read the comment before changing.
@@ -214,12 +215,8 @@
     enable = true;
     startInBackground = true;
   };
-  services.ollama = {
-    enable = true;
-    acceleration = "cuda";
-  };
 
-  xdg.enable = true;
+    xdg.enable = true;
   xdg.userDirs = {
     enable = true;
     createDirectories = true;

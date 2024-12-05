@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+# Edit this configuration file to define what should be installed onconfiguconfigu
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
@@ -32,6 +32,8 @@
                   "nixos-config=$HOME/dotfiles/system/configuration.nix"
                   "/nix/var/nix/profiles/per-user/root/channels"
                 ];
+
+
 
   # Ensure nix flakes are enabled
   nix.extraOptions = ''
@@ -99,7 +101,7 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "networkmanager" "wheel" "input" "uinput" "dialout" "video" "render" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "uinput" "dialout" "video" "render" "libvirtd" ];
     packages = [];
     uid = 1000;
   };
@@ -127,6 +129,11 @@
       fi
     '')
   ];
+
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
 
   # I use zsh btw
   environment.shells = with pkgs; [ zsh ];

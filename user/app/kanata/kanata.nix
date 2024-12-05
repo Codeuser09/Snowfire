@@ -5,5 +5,5 @@
     kanata
   ];
 
-  home.file.".config/kanta/".source = ./.;
+  home.file.".config/kanata/".source = ./.;
 }

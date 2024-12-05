@@ -60,7 +60,7 @@ in
 
       exec-once = hyprpaper
 
-      exec-once = kanta -c ~/.config/kanata/config.kbd
+      exec-once = kanata -c ~/.config/kanata/config.kbd
 
       bezier = wind, 0.05, 0.9, 0.1, 1.05
       bezier = winIn, 0.1, 1.1, 0.1, 1.0
@@ -816,8 +816,8 @@ in
         };
         "clock#time" = {
           "interval" = 1;
-          "format" = "{:%I:%M:%S %p}";
-          "timezone" = "America/Chicago";
+          "format" = "{:%H:%M:%S}";
+          "timezone" = "Europe/Vienna";
           "tooltip-format" = ''
             <big>{:%Y %B}</big>
             <tt><small>{calendar}</small></tt>'';

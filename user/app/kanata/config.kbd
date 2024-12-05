@@ -4,7 +4,7 @@
 )
 
 (defsrc
-  caps a s d f j k l u ; g o
+  caps a s d f j k l u ; g h o
 )
 
 (defvar
@@ -16,11 +16,14 @@
   u u
   o o
   u2 (unicode ü)
+  U2 (unicode Ü)
   o2 (unicode ö)
+  O2 (unicode Ö)
 
   escctrl (tap-hold 100 100 esc lctl)
   a (tap-hold $tap-time $hold-time a lmet)
   a2 (tap-hold $tap-time $hold-time (unicode ä) lmet)
+  A2 (tap-hold $tap-time $hold-time (unicode Ä) lmet)
   s (tap-hold $tap-time $hold-time s lalt)
   s2 (tap-hold $tap-time $hold-time (unicode ß) lalt)
 
@@ -31,12 +34,17 @@
   l (tap-hold $tap-time $hold-time l ralt)
   ; (tap-hold $tap-time $hold-time ; rmet)
   sym (tap-hold $tap-time $hold-time g (layer-toggle symbols))
+  sym-cap (tap-hold $tap-time $hold-time h (layer-toggle symbols-cap))
 )
 
 (deflayer base
-  @escctrl @a @s @d @f @j @k @l @u @; @sym  @o
+  @escctrl @a @s @d @f @j @k @l @u @; @sym  @sym-cap @o
 )
 
 (deflayer symbols
-  @escctrl @a2 @s2 @d @f @j @k @l @u2 @; @sym @o2
+  @escctrl @a2 @s2 @d @f @j @k @l @u2 @; @sym @sym-cap @o2
+)
+
+(deflayer symbols-cap
+  @escctrl @A2 @s2 @d @f @j @k @l @U2 @; @sym @sym-cap @O2
 )
