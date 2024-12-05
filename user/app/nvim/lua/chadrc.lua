@@ -7,7 +7,6 @@ local M = {}
 
 M.base46 = {
 	theme = "stylix",
-  transparency = true,
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -17,6 +16,7 @@ M.base46 = {
 
 M.ui = {
  theme = "stylix",
+ transparency = true,
  nvdash = {
    load_on_startup = true,
    buttons = {
