@@ -16,7 +16,6 @@
               ../../user/app/nvim/nvim.nix # My doom emacs config
               #../../user/app/emacsng # Me experimenting with emacsng and a vanilla config
               ../../user/app/ranger/ranger.nix # My ranger file manager config
-              ../../user/app/git/git.nix # My git config
               ../../user/app/keepass/keepass.nix # My password manager
               (./. + "../../../user/app/browser"+("/"+userSettings.browser)+".nix") # My default browser selected from flake
               ../../user/app/kanata/kanata.nix
