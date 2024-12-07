@@ -4,7 +4,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "nil_ls", "marksman", "clangd", "pylsp", "ts_ls", "java_language_server", "dockerls", "docker_compose_language_service", "jsonls", "kotlin_language_server", "bashls", "yamlls", "sqls" }
+local servers = { "html", "cssls", "marksman", "clangd", "pylsp", "ts_ls", "java_language_server", "dockerls", "docker_compose_language_service", "jsonls", "kotlin_language_server", "bashls", "yamlls", "sqls", "nil", "rust_analyzer" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -17,6 +17,9 @@ for _, lsp in ipairs(servers) do
 end
 lspconfig.gdscript.setup {
   cmd = { "ncat", "localhost", "6005"}
+}
+lspconfig.rust_analyzer.setup {
+  cmd = { "/home/simon/.nix-profile/bin/rust-analyzer" }
 }
 
 -- configuring single server, example: typescript
