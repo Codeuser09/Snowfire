@@ -59,7 +59,7 @@ return {
         enabled = not vim.g.ai_cmp,
         auto_trigger = true,
         keymap = {
-          accept = "<C-h>", -- handled by nvim-cmp / blink.cmp
+          accept = "<C-CR>", -- handled by nvim-cmp / blink.cmp
           next = "<M-]>",
           prev = "<M-[>",
         },
