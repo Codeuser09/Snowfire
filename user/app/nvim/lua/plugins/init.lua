@@ -29,27 +29,6 @@ return {
   { 'jghauser/follow-md-links.nvim', lazy = false, },
 
   {
-    "NeogitOrg/neogit",
-    lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
-  
-      -- Only one of these is needed.
-      "nvim-telescope/telescope.nvim", -- optional
-    },
-    config = true
-  },
-  {
-    'nvim-orgmode/orgmode',
-    event = 'VeryLazy',
-    ft = { 'org' },
-    config = function()
-      -- Setup orgmode
-      require('orgmode').setup({})
-    end,
-  },
-  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     build = ":Copilot auth",
