@@ -44,4 +44,11 @@ map({ "n", "t", "i", "v" }, "<A-z>", function()
 end, { desc = "terminal toggleable horizontal term" })
 map("i", "jk", "<ESC>")
 
+map({ "n", "t", "v" }, "<leader>cc", "<cmd>CopilotChat<CR>", { desc = "copilot chat" })
+map({ "n", "t", "v" }, "<leader>ce", "<cmd>CopilotChatExplain<CR>", { desc = "copilot explain" })
+map({ "n", "t", "v" }, "<leader>cf", "<cmd>CopilotChatFix<CR>", { desc = "copilot fix" })
+map({ "n", "t", "v" }, "<leader>cC", "<cmd>CopilotChatCommit<CR>", { desc = "copilot commit" })
+map({ "n", "t", "v" }, "<leader>cr", "<cmd>CopilotChatReview<CR>", { desc = "copilot review" })
+map({ "n", "t", "v" }, "<leader>ct", "<cmd>CopilotChatTests<CR>", { desc = "copilot tests" })
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
