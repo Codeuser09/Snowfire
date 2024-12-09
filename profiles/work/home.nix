@@ -31,6 +31,7 @@
               #../../user/pkgs/blockbench.nix # Blockbench ## marked as insecure
               ../../user/hardware/bluetooth.nix # Bluetooth
               ../../user/app/kanata/kanata.nix
+              ../../user/app/git/git.nix
             ];
 
   home.stateVersion = "22.11"; # Please read the comment before changing.
@@ -51,15 +52,16 @@
     mate.atril
     openboard
     xournalpp
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
     shared-mime-info
     glib
     newsflash
     foliate
-    gnome.nautilus
-    gnome.gnome-calendar
-    gnome.seahorse
-    gnome.gnome-maps
+    nautilus
+    file-roller
+    gnome-calendar
+    seahorse
+    gnome-maps
     openvpn
     protonmail-bridge
     texliveSmall
@@ -185,7 +187,7 @@
     mediainfo
     libmediainfo
     audio-recorder
-    gnome.cheese
+    cheese
 
     ardour
     bitwig-studio
