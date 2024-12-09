@@ -64,6 +64,9 @@ let myScript = ''
           sudo nix-collect-garbage --delete-older-than 30d;
           nix-collect-garbage --delete-older-than 30d;
         fi
+      elif [ "$1" = "backup" ]; then
+        echo "backup script here";
+        exit 0;
       fi
     '';
 in
