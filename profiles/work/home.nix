@@ -28,6 +28,7 @@
               ../../user/lang/python/python-packages.nix
               ../../user/lang/rust/rust.nix
               ../../user/lang/javascript/javascript.nix
+              ../../user/lang/java/java.nix
               #../../user/pkgs/blockbench.nix # Blockbench ## marked as insecure
               ../../user/hardware/bluetooth.nix # Bluetooth
               ../../user/app/kanata/kanata.nix
@@ -47,7 +48,7 @@
     obsidian
 
     # Office
-    nextcloud-client
+    # nextcloud-client
     libreoffice-fresh
     mate.atril
     openboard
@@ -63,11 +64,10 @@
     seahorse
     gnome-maps
     openvpn
-    protonmail-bridge
+    thunderbird
     texliveSmall
     numbat
-    element-desktop-wayland
-    anki
+    anki-bin
     bitwarden
     openai-whisper-cpp
 
@@ -88,15 +88,6 @@
            #flatpak run --command=bottles-cli com.usebottles.bottles run -b FL\ Studio -p FL64 -args "$filepath"
          fi
     '')
-    (pkgs.makeDesktopItem {
-      name = "flstudio";
-      desktopName = "FL Studio 64";
-      exec = "flstudio %U";
-      terminal = false;
-      type = "Application";
-      icon = "flstudio";
-      mimeTypes = ["application/octet-stream"];
-    })
     (stdenv.mkDerivation {
       name = "flstudio-icon";
       # icon from https://www.reddit.com/r/MacOS/comments/jtmp7z/i_made_icons_for_discord_spotify_and_fl_studio_in/
@@ -189,22 +180,19 @@
     audio-recorder
     cheese
 
-    ardour
     bitwig-studio
+    musescore
     yabridge
     yabridgectl
 
-    rosegarden
-    tenacity
-
     # Various dev packages
-    remmina
     sshfs
     texinfo
     libffi zlib
     nodePackages.ungit
     ventoy
     kdenlive
+    libwacom
   ]);
 
   home.file.".local/share/pixmaps/nixos-snowflake-stylix.svg".source =
@@ -213,11 +201,12 @@
       extension = "svg";
     };
 
-  services.syncthing.enable = true;
-  services.nextcloud-client = {
-    enable = true;
-    startInBackground = true;
-  };
+  # Don't have a nextcloud-client
+  # services.syncthing.enable = true;
+  # services.nextcloud-client = {
+  #   enable = true;
+  #   startInBackground = true;
+  # };
 
     xdg.enable = true;
   xdg.userDirs = {

@@ -62,6 +62,9 @@ in
 
       exec-once = kanata -c ~/.config/kanata/config.kbd
 
+      exec-once = keepassxc
+      exec-once = keepassworkspace
+
       bezier = wind, 0.05, 0.9, 0.1, 1.05
       bezier = winIn, 0.1, 1.1, 0.1, 1.0
       bezier = winOut, 0.3, -0.3, 0, 1
@@ -215,10 +218,10 @@ in
        bind=SUPER,M,togglespecialworkspace,scratch_music
        bind=SUPER,B,exec,if hyprctl clients | grep scratch_btm; then echo "scratch_ranger respawn not needed"; else alacritty --class scratch_btm -e btm; fi
        bind=SUPER,B,togglespecialworkspace,scratch_btm
-       bind=SUPER,D,exec,if hyprctl clients | grep Element; then echo "scratch_ranger respawn not needed"; else element-desktop; fi
-       bind=SUPER,D,togglespecialworkspace,scratch_element
-       bind=SUPER,P,exec,togglespecialworkspace,scratch_pavucontrol
-       bind=SUPER,code:172,exec,if hyprctl clients | grep pavucontrol; then echo "scratch_ranger respawn not needed"; else pavucontrol; fi
+       bind=SUPER,P,exec,if hyprctl clients | grep scratch_keepass; then echo "scratch_ranger respawn not needed"; else keepassxc; fi
+       bind=SUPER,P,togglespecialworkspace,scratch_keepass
+       # bind=SUPER,P,exec,togglespecialworkspace,scratch_pavucontrol
+       # bind=SUPER,P,exec,hyprctl dispatch togglespecialworkspace scratch_pavucontrol; if hyprctl clients | grep pavucontrol; then echo 'scratch_ranger respawn not needed'; else pavucontrol; fi
 
        $scratchpadsize = size 80% 85%
 
@@ -250,10 +253,9 @@ in
        windowrulev2 = workspace special:scratch_btm silent,$scratch_btm
        windowrulev2 = center,$scratch_btm
 
-       windowrulev2 = float,class:^(Element)$
-       windowrulev2 = size 85% 90%,class:^(Element)$
-       windowrulev2 = workspace special:scratch_element silent,class:^(Element)$
-       windowrulev2 = center,class:^(Element)$
+       $scratch_keepass = class:^(org.keepassxc.KeePassXC)$
+       windowrulev2 = float,$scratch_keepass
+       windowrulev2 = $scratchpadsize,$scratch_keepass
 
        windowrulev2 = float,class:^(lollypop)$
        windowrulev2 = size 85% 90%,class:^(lollypop)$
@@ -268,8 +270,7 @@ in
        $pavucontrol = class:^(org.pulseaudio.pavucontrol)$
        windowrulev2 = float,$pavucontrol
        windowrulev2 = size 86% 40%,$pavucontrol
-       windowrulev2 = move 50% 6%,$pavucontrol
-       windowrulev2 = workspace special silent,$pavucontrol
+       windowrulev2 = workspace special:scratch_pavucontrol silent,$pavucontrol
        windowrulev2 = opacity 0.80,$pavucontrol
 
        $miniframe = title:\*Minibuf.*
@@ -294,8 +295,8 @@ in
        windowrulev2 = opacity 0.80,title:ORUI
 
        windowrulev2 = opacity 1.0,class:^(org.qutebrowser.qutebrowser),fullscreen:1
-       windowrulev2 = opacity 0.85,class:^(Element)$
        windowrulev2 = opacity 0.85,class:^(Logseq)$
+       windowrulev2 = opacity 0.85,class:^(obsidian)$
        windowrulev2 = opacity 0.85,class:^(lollypop)$
        windowrulev2 = opacity 1.0,class:^(Brave-browser),fullscreen:1
        windowrulev2 = opacity 1.0,class:^(librewolf),fullscreen:1
@@ -324,11 +325,10 @@ in
        bind=SUPER,minus, exec, hyprctl keyword cursor:zoom_factor "$(hyprctl getoption cursor:zoom_factor | grep float | awk '{print $2 - 0.5}')"
 
        bind=SUPER,I,exec,networkmanager_dmenu
-       bind=SUPER,P,exec,keepmenu
        bind=SUPERSHIFT,P,exec,hyprprofile-dmenu
        bind=SUPERCTRL,R,exec,phoenix refresh
 
-       # 3 monitor setup
+       # 3 monitor setupsplit
        monitor=eDP-1,1920x1080@300,900x1080,1
        monitor=HDMI-A-1,1920x1080,1920x0,1
        monitor=DP-1,1920x1080,0x0,1
@@ -406,6 +406,13 @@ in
         GDK_PIXBUF_MODULE_FILE=${pkgs.librsvg}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache nwggrid-server -layer-shell-exclusive-zone -1 -g adw-gtk3 -o 0.55 -b ${config.lib.stylix.colors.base00}
       fi
     '')
+    (pkgs.writeScriptBin "keepassworkspace" ''
+      #!/bin/sh
+      while true; do
+        hyprctl dispatch movetoworkspacesilent special:scratch_keepass,title:"No passwords here - KeePassXC"
+        sleep 1
+      done
+    '')
     libva-utils
     libinput-gestures
     gsettings-desktop-schemas
@@ -450,7 +457,6 @@ in
     hypridle
     hyprpaper
     fnott
-    keepmenu
     pinentry-gnome3
     wev
     grim
@@ -665,7 +671,7 @@ in
 
     label {
       monitor =
-      text = Hello, Emmet
+      text = Hello, Simon
       color = rgb(''+config.lib.stylix.colors.base07-rgb-r+'',''+config.lib.stylix.colors.base07-rgb-g+'', ''+config.lib.stylix.colors.base07-rgb-b+'')
       font_size = 25
       font_family = ''+userSettings.font+''

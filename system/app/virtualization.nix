@@ -11,4 +11,5 @@
     qemu.runAsRoot = false;
   };
   virtualisation.waydroid.enable = true;
+  virtualisation.vmware.host.enable = true;
 }

@@ -4,7 +4,7 @@
 )
 
 (defsrc
-  caps a s d f j k l u ; g h o
+  caps a s d f j k l u ; g h o e p
 )
 
 (defvar
@@ -15,10 +15,14 @@
 (defalias
   u u
   o o
+  e e
+  p p
   u2 (unicode ü)
   U2 (unicode Ü)
   o2 (unicode ö)
   O2 (unicode Ö)
+  e2 (unicode €)
+  p2 (unicode §)
 
   escctrl (tap-hold 100 100 esc lctl)
   a (tap-hold $tap-time $hold-time a lmet)
@@ -38,13 +42,13 @@
 )
 
 (deflayer base
-  @escctrl @a @s @d @f @j @k @l @u @; @sym  @sym-cap @o
+  @escctrl @a @s @d @f @j @k @l @u @; @sym  @sym-cap @o @e @p
 )
 
 (deflayer symbols
-  @escctrl @a2 @s2 @d @f @j @k @l @u2 @; @sym @sym-cap @o2
+  @escctrl @a2 @s2 @d @f @j @k @l @u2 @; @sym @sym-cap @o2 @e2 @p2
 )
 
 (deflayer symbols-cap
-  @escctrl @A2 @s2 @d @f @j @k @l @U2 @; @sym @sym-cap @O2
+  @escctrl @A2 @s2 @d @f @j @k @l @U2 @; @sym @sym-cap @O2 @e2 @p2
 )
