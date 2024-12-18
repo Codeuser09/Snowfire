@@ -2,8 +2,6 @@
 
 {
   home.packages = with pkgs; [
-      # Rust setup
-      rustup
-      jetbrains.intellij
+      jetbrains.idea-ultimate
   ];
 }
