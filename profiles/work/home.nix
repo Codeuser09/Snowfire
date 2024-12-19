@@ -46,6 +46,8 @@
     git
     syncthing
     obsidian
+    joplin
+    joplin-desktop
 
     # Office
     # nextcloud-client

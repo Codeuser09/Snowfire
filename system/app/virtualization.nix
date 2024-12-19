@@ -8,7 +8,7 @@
       "virbr0"
     ];
     enable = true;
-    qemu.runAsRoot = false;
+    qemu.runAsRoot = true;
   };
   virtualisation.waydroid.enable = true;
   virtualisation.vmware.host.enable = true;
