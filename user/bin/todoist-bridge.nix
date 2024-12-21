@@ -8,9 +8,6 @@ check_tasks() {
     # Fetch the list of tasks from Todoist
     tasks=$(todoist sync && todoist list)
 
-    echo "$current_date"
-    echo "$tasks"
-
     # Check if the current date is present in the tasks list
     if echo "$tasks" | grep "$current_date"; then
         # Send a notification

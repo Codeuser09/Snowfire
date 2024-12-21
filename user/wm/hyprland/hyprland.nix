@@ -5,6 +5,7 @@ in
   imports = [
     ../../app/terminal/alacritty.nix
     ../../app/terminal/kitty.nix
+    ../../../user/bin/keepass-workspace.nix
     (import ../../app/dmenu-scripts/networkmanager-dmenu.nix {
       dmenu_command = "fuzzel -d"; inherit config lib pkgs;
     })
@@ -63,7 +64,8 @@ in
       exec-once = kanata -c ~/.config/kanata/config.kbd
 
       exec-once = keepassxc
-      exec-once = keepassworkspace
+      exec-once = keepass-workspace
+      exec-once = todoist-bridge
 
       bezier = wind, 0.05, 0.9, 0.1, 1.05
       bezier = winIn, 0.1, 1.1, 0.1, 1.0
@@ -405,13 +407,6 @@ in
       else
         GDK_PIXBUF_MODULE_FILE=${pkgs.librsvg}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache nwggrid-server -layer-shell-exclusive-zone -1 -g adw-gtk3 -o 0.55 -b ${config.lib.stylix.colors.base00}
       fi
-    '')
-    (pkgs.writeScriptBin "keepassworkspace" ''
-      #!/bin/sh
-      while true; do
-        hyprctl dispatch movetoworkspacesilent special:scratch_keepass,title:"No passwords here - KeePassXC"
-        sleep 1
-      done
     '')
     libva-utils
     libinput-gestures
