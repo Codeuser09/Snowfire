@@ -33,6 +33,7 @@
               ../../user/hardware/bluetooth.nix # Bluetooth
               ../../user/app/kanata/kanata.nix
               ../../user/app/git/git.nix
+              ../../user/bin/todoist-bridge.nix
             ];
 
   home.stateVersion = "22.11"; # Please read the comment before changing.
@@ -46,6 +47,8 @@
     git
     syncthing
     obsidian
+    todoist
+    notion-app-enhanced
 
     # Office
     # nextcloud-client
