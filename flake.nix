@@ -159,6 +159,7 @@
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/configuration.nix")
             inputs.lix-module.nixosModules.default
             ./system/bin/phoenix.nix
+            ./system/bin/backup.nix
           ]; # load configuration.nix from selected PROFILE
           specialArgs = {
             # pass config variables from above

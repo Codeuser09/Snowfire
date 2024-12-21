@@ -33,6 +33,6 @@ done
 in
 {
   home.packages = [
-    (pkgs.writeScriptBin "backup" myScript)
+    (pkgs.writeScriptBin "todoist-bridge" myScript)
   ];
 }
